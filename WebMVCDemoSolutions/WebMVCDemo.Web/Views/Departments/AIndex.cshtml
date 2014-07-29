@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebMVCDemo.Web.DAL.Department>
+
+@{
+    ViewBag.Title = "AIndex";
+}
+@Scripts.Render("~/Scripts/angular.js")
+
+@*
+    Custom code for controller. Controller have the the responsibility of calling service side code.
+    Try to avoid writting business rules to js files.
+    Controllers should only have responsibility to prepare data that is require by the view for binding it to controls.
+*@
+<script src="~/Scripts/Custom/DeptController.js"></script>
+<h2>AIndex</h2>
+
+<p>Nothing here {{1+4}}</p>
+
+@* Target model name "query" should match with the filter section mentioned below. *@
+<input ng-model="query" />
+
+@*
+    "ng-controller="DeptController" decides the scope for the object those are constructed in this controller.
+    If you try to access department object out side of this div, it will be null.
+*@
+
+<div ng-controller="DeptController">
+
+    <ul>
+        @* "query"  should match with the input attribute mentioned above*@
+        <li ng-repeat="dept in departments | filter:query">
+            {{dept.Name}}
+        </li>
+    </ul>
+
+    @* See what is linside department object that is coming as a JSON from server. One can use this for debuggin purpose. *@
+    <pre>Object Data : Departments
+{{departments | json}}
+</pre>
+</div>
