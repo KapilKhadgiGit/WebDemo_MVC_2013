@@ -1,69 +1,18 @@
-﻿@model IEnumerable<WebMVCDemo.Web.DAL.Employee>
-
-@{
-    ViewBag.Title = "Index";
-}
+﻿@Scripts.Render("~/scripts/angular.js")
+@Scripts.Render("~/scripts/Custom/EmpController.js")
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ename)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.job)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mgr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.hiredate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.comm)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Department.DeptName)
-        </th>
-        <th></th>
-    </tr>
+<div ng-controller="EmpController">
+    <ul>
+        <li ng-repeat="emp in Employees">
+            {{emp.Name}}
+        </li>
+    </ul>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ename)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.job)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mgr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hiredate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.DeptName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.empno }) |
-            @Html.ActionLink("Details", "Details", new { id=item.empno }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.empno })
-        </td>
-    </tr>
-}
 
-</table>
+    @* See what is linside department object that is coming as a JSON from server. One can use this for debuggin purpose. *@
+    <pre>Object Data : Departments
+{{Employees | json}}
+</pre>
+</div>

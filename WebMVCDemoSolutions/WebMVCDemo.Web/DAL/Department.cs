@@ -19,7 +19,7 @@ namespace WebMVCDemo.Web.DAL
             this.Employees = new HashSet<Employee>();
         }
     
-        public decimal deptno { get; set; }
+        public decimal DeptNo { get; set; }
         public string DeptName { get; set; }
         public string Location { get; set; }
     

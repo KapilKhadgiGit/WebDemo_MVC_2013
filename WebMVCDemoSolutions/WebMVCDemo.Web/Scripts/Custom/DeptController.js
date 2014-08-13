@@ -1,7 +1,7 @@
-﻿var deptApp = angular.module('deptApp', []);
+﻿var demoApp = angular.module('demoApp', []);
 
 // deptApp.controller('DeptController', function ($scope, $http) {
-deptApp.controller('DeptController', ['$scope', '$http', function ($scope, $http) {
+demoApp.controller('DeptController', ['$scope', '$http', function ($scope, $http) {
 
     //$scope.departments = [{ 'DeptName': 'Software', 'Location': 'GA' }, { 'DeptName': 'Sitecore', 'Location': 'FB' }];
 

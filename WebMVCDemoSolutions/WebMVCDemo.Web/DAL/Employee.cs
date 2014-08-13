@@ -14,14 +14,13 @@ namespace WebMVCDemo.Web.DAL
     
     public partial class Employee
     {
-        public decimal empno { get; set; }
-        public string ename { get; set; }
-        public string job { get; set; }
-        public Nullable<decimal> mgr { get; set; }
-        public Nullable<System.DateTime> hiredate { get; set; }
-        public Nullable<decimal> sal { get; set; }
-        public Nullable<decimal> comm { get; set; }
-        public Nullable<decimal> deptno { get; set; }
+        public decimal EmpNo { get; set; }
+        public string Name { get; set; }
+        public string Job { get; set; }
+        public Nullable<decimal> Manager { get; set; }
+        public Nullable<System.DateTime> HireDate { get; set; }
+        public Nullable<decimal> Salary { get; set; }
+        public Nullable<decimal> DeptNo { get; set; }
     
         public virtual Department Department { get; set; }
     }

@@ -20,22 +20,6 @@ namespace WebMVCDemo.Web.Controllers
             return View(db.Departments.ToList());
         }
 
-        // GET: Departments
-        public ActionResult AIndex()
-        {
-            return View(db.Departments.ToList());
-        }
-
-        // GET: Departments
-        public ActionResult GetDepartments()
-        {
-            IEnumerable<WebMVCDemo.Web.Models.Department> dept = from d in db.Departments
-                                                                 select new WebMVCDemo.Web.Models.Department { Name = d.DeptName, Location = d.Location };
-
-            return Json(dept, JsonRequestBehavior.AllowGet);
-        }
-
-
         // GET: Departments/Details/5
         public ActionResult Details(decimal id)
         {
@@ -62,7 +46,7 @@ namespace WebMVCDemo.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "deptno,DeptName,Location")] Department department)
+        public ActionResult Create([Bind(Include = "DeptNo,DeptName,Location")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +78,7 @@ namespace WebMVCDemo.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "deptno,DeptName,Location")] Department department)
+        public ActionResult Edit([Bind(Include = "DeptNo,DeptName,Location")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -139,5 +123,24 @@ namespace WebMVCDemo.Web.Controllers
             }
             base.Dispose(disposing);
         }
+
+        #region Custom Data Provider
+
+        // GET: Departments
+        public ActionResult AIndex()
+        {
+            return View(db.Departments.ToList());
+        }
+
+        // GET: Departments
+        public ActionResult GetDepartments()
+        {
+            IEnumerable<WebMVCDemo.Web.Models.DepartmentDetails> dept = from d in db.Departments
+                                                                        select new WebMVCDemo.Web.Models.DepartmentDetails { Name = d.DeptName, Location = d.Location };
+
+            return Json(dept, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
     }
 }

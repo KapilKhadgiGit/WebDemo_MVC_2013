@@ -7,7 +7,7 @@ using System.Web;
 namespace WebMVCDemo.Web.Models
 {
     [Serializable]
-    public class Department
+    public class DepartmentDetails
     {
         [DataMember]
         public string Name { get; set; }

@@ -39,7 +39,7 @@ namespace WebMVCDemo.Web.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.deptno = new SelectList(db.Departments, "deptno", "DeptName");
+            ViewBag.DeptNo = new SelectList(db.Departments, "DeptNo", "DeptName");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace WebMVCDemo.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "empno,ename,job,mgr,hiredate,sal,comm,deptno")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmpNo,Name,Job,Manager,HireDate,Salary,DeptNo")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace WebMVCDemo.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.deptno = new SelectList(db.Departments, "deptno", "DeptName", employee.deptno);
+            ViewBag.DeptNo = new SelectList(db.Departments, "DeptNo", "DeptName", employee.DeptNo);
             return View(employee);
         }
 
@@ -73,7 +73,7 @@ namespace WebMVCDemo.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.deptno = new SelectList(db.Departments, "deptno", "DeptName", employee.deptno);
+            ViewBag.DeptNo = new SelectList(db.Departments, "DeptNo", "DeptName", employee.DeptNo);
             return View(employee);
         }
 
@@ -82,7 +82,7 @@ namespace WebMVCDemo.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "empno,ename,job,mgr,hiredate,sal,comm,deptno")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmpNo,Name,Job,Manager,HireDate,Salary,DeptNo")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace WebMVCDemo.Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.deptno = new SelectList(db.Departments, "deptno", "DeptName", employee.deptno);
+            ViewBag.DeptNo = new SelectList(db.Departments, "DeptNo", "DeptName", employee.DeptNo);
             return View(employee);
         }
 
@@ -128,5 +128,17 @@ namespace WebMVCDemo.Web.Controllers
             }
             base.Dispose(disposing);
         }
+
+        #region Custom Data Provides
+
+        public ActionResult GetEmployees()
+        {
+            IEnumerable<WebMVCDemo.Web.Models.EmployeeDetails> dept = from d in db.Employees
+                                                                      select new WebMVCDemo.Web.Models.EmployeeDetails { Name = d.Name, HireDate = d.HireDate.Value.ToString()};
+
+            return Json(dept, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
     }
 }

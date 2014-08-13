@@ -50,11 +50,11 @@ namespace WebMVCDemo.Web
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "16128243025-fj5eic6k90fvffl9rigm9p12aaeroq9f.apps.googleusercontent.com",
+                ClientSecret = "kf804rEsrfICvYopPLqxVb8k"
+            });
         }
     }
 }

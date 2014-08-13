@@ -5,17 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c3ea1bdfd0ad41118e3128b5b079a399" Name="Diagram1">
-        <EntityTypeShape EntityType="WebMVCDemoDbModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebMVCDemoDbModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WebMVCDemoDbModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="WebMVCDemoDbModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebMVCDemoDbModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebMVCDemoDbModel.Department" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebMVCDemoDbModel.Employee" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <AssociationConnector Association="WebMVCDemoDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="WebMVCDemoDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="WebMVCDemoDbModel.deptno_fk" ManuallyRouted="false" />
         <AssociationConnector Association="WebMVCDemoDbModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebMVCDemoDbModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="WebMVCDemoDbModel.Department" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="WebMVCDemoDbModel.Employee" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="WebMVCDemoDbModel.deptno_fk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
