@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#lA" data-toggle="tab">Demo 1</a></li>
+        <li class=""><a href="#lB" data-toggle="tab">Demo 2</a></li>
+        <li class=""><a href="#lC" data-toggle="tab">Demo 3</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="lA">
+            <p>@Html.Partial("_Demo1Partial")</p>
+        </div>
+        <div class="tab-pane" id="lB">
+            <p>@Html.Partial("_Demo2Partial")</p>
+        </div>
+        <div class="tab-pane" id="lC">
+            <p>@Html.Partial("_Demo3Partial")</p>
+        </div>
+    </div>
+</div>
