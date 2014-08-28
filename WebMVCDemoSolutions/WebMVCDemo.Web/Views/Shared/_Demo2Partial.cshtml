@@ -1,7 +1,8 @@
-﻿<div class="page-header">
+﻿@Scripts.Render("~/Scripts/Custom/TasksController.js")
+<div class="page-header">
     <h1>Adam's To Do List</h1>
 </div>
-<div class="panel">
+<div class="panel" ng-controller="TaskController">
     <div class="input-group">
         <input class="form-control" />
         <span class="input-group-btn">
@@ -11,15 +12,16 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Description</th>
-                <th>Done</th>
+                <th>Title</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>Buy Flowers</td><td>No</td></tr>
-            <tr><td>Get Shoes</td><td>No</td></tr>
-            <tr><td>Collect Tickets</td><td>Yes</td></tr>
-            <tr><td>Call Joe</td><td>No</td></tr>
+            <tr ng-repeat="task in tasks"><td>{{task.Title}}</td></tr>
         </tbody>
     </table>
+
+    <pre>Object Data : Tasks
+        {{tasks | json}}
+    </pre>
+
 </div>

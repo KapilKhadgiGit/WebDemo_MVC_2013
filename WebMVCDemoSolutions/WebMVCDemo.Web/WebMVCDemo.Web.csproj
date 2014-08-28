@@ -187,6 +187,7 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TaskManagerController.cs" />
     <Compile Include="DAL\AspNetRole.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
     </Compile>
@@ -206,6 +207,9 @@
       <DependentUpon>WebDemoDb.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Employee.cs">
+      <DependentUpon>WebDemoDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Task.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\WebDemoDb.Context.cs">
@@ -235,6 +239,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\TaskDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IProductImport.cs" />
     <Compile Include="Services\ProductImport.svc.cs">
@@ -304,6 +309,7 @@
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Custom\EmpController.js" />
+    <Content Include="Scripts\Custom\TasksController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -657,7 +663,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\TaskManager\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

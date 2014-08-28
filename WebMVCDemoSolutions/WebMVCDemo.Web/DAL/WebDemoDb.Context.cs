@@ -32,5 +32,6 @@ namespace WebMVCDemo.Web.DAL
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
     }
 }
