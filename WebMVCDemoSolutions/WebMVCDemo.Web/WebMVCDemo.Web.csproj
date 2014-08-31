@@ -188,6 +188,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TaskManagerController.cs" />
+    <Compile Include="Controllers\Translator.cs" />
     <Compile Include="DAL\AspNetRole.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
     </Compile>
@@ -598,6 +599,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Plugins\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Plugins\Moment.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />

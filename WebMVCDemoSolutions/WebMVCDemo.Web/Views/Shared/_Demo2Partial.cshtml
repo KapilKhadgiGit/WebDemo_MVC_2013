@@ -1,27 +1,75 @@
-﻿@Scripts.Render("~/Scripts/Custom/TasksController.js")
+﻿
 <div class="page-header">
-    <h1>Adam's To Do List</h1>
+    <h1>To Do List</h1>
 </div>
-<div class="panel" ng-controller="TaskController">
-    <div class="input-group">
-        <input class="form-control" />
-        <span class="input-group-btn">
-            <button class="btn btn-default">Add</button>
-        </span>
+<div class="container" ng-controller="TaskController">
+    <div>
+        Number of overdue tasks : <label class="label label-danger">{{overDueItems}}</label>
     </div>
-    <table class="table table-striped">
+    <br />
+    <form class="form-group">
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    <label> Task Title:</label>
+
+                    <input class="form-control form-group" data-ng-model="newTask.Title" required />
+                    @*<span class="help-block">Title can not be blank.</span>*@
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <label> Task Description:</label>
+                    <input class="form-control form-group" data-ng-model="newTask.Description" />
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <label> Due Date:</label>
+                    <input class="form-control form-group date" data-ng-model="newTask.DueDate" id="datetimepicker1" />
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    <br />
+                    <button class="btn btn-primary form-group" type="submit" data-ng-click="createTask()">Add</button>
+
+                </p>
+            </div>
+        </div>
+
+    </form>
+    <br />
+    <br />
+    <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Task Id</th>
                 <th>Title</th>
+                <th class="visible-md visible-lg">Description</th>
+                <th>Due Date</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="task in tasks"><td>{{task.Title}}</td></tr>
+            <tr ng-repeat="task in tasks">
+                <td>{{task.TaskId}}</td>
+                <td>{{task.Title}}</td>
+                <td class="visible-md visible-lg">{{task.Description}}</td>
+                <td>{{task.DueDate | date:'medium'}}</td>
+            </tr>
         </tbody>
     </table>
+    <br />
+    <br />
+    <br />
+    <br />
 
-    <pre>Object Data : Tasks
+    <div>
+        <pre>JSON Object Data : Tasks
         {{tasks | json}}
     </pre>
-
+    </div>
 </div>
+
+@Scripts.Render("~/Scripts/Custom/TasksController.js")
