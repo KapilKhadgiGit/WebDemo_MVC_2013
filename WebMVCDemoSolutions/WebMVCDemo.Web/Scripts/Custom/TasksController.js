@@ -1,5 +1,8 @@
 ﻿var demoApp = angular.module('demoApp', []);
 
+// If the module is already defined somewhere else then use below line.
+var demoApp = angular.module('demoApp');
+
 // deptApp.controller('DeptController', function ($scope, $http) {
 demoApp.controller('TaskController', ['$scope', '$http', function ($scope, $http) {
 

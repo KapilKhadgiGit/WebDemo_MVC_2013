@@ -249,13 +249,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\WebMVCDemoDb.mdf" />
-    <Content Include="App_Data\WebMVCDemoDb_log.ldf">
-      <DependentUpon>WebMVCDemoDb.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DAL\WebDemoDb.edmx.sql" />
     <Content Include="ExternalReferences\Inpro.Authentication.dll" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -667,6 +664,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\TaskManager\" />
   </ItemGroup>
   <PropertyGroup>

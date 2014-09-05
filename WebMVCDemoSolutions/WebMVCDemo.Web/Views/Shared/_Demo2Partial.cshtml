@@ -1,75 +1,15 @@
-﻿
-<div class="page-header">
-    <h1>To Do List</h1>
+﻿<div class="col-md-4">
+    <div>
+        Enter your name:
+        <input type="text" ng-model="name"></input>
+    </div>
+    <div>Hello {{name}}</div>
 </div>
-<div class="container" ng-controller="TaskController">
+<div class="col-md-4">
     <div>
-        Number of overdue tasks : <label class="label label-danger">{{overDueItems}}</label>
+        Enter amount:
+        <input type="text" ng-model="amount"></input>
     </div>
-    <br />
-    <form class="form-group">
-
-        <div class="row">
-            <div class="col-md-4">
-                <p>
-                    <label> Task Title:</label>
-
-                    <input class="form-control form-group" data-ng-model="newTask.Title" required />
-                    @*<span class="help-block">Title can not be blank.</span>*@
-                </p>
-            </div>
-            <div class="col-md-4">
-                <p>
-                    <label> Task Description:</label>
-                    <input class="form-control form-group" data-ng-model="newTask.Description" />
-                </p>
-            </div>
-            <div class="col-md-4">
-                <p>
-                    <label> Due Date:</label>
-                    <input class="form-control form-group date" data-ng-model="newTask.DueDate" id="datetimepicker1" />
-                </p>
-            </div>
-            <div class="col-md-4">
-                <p>
-                    <br />
-                    <button class="btn btn-primary form-group" type="submit" data-ng-click="createTask()">Add</button>
-
-                </p>
-            </div>
-        </div>
-
-    </form>
-    <br />
-    <br />
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Task Id</th>
-                <th>Title</th>
-                <th class="visible-md visible-lg">Description</th>
-                <th>Due Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="task in tasks">
-                <td>{{task.TaskId}}</td>
-                <td>{{task.Title}}</td>
-                <td class="visible-md visible-lg">{{task.Description}}</td>
-                <td>{{task.DueDate | date:'medium'}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <div>
-        <pre>JSON Object Data : Tasks
-        {{tasks | json}}
-    </pre>
-    </div>
+    <div>Amount : {{amount | currency}}</div>
 </div>
 
-@Scripts.Render("~/Scripts/Custom/TasksController.js")
