@@ -234,7 +234,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebDemoDb.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Framework\KLogger.cs" />
+    <Compile Include="Framework\KLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -607,6 +609,7 @@
     <Content Include="Scripts\Plugins\Moment.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\version.json" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Services\ProductImport.svc" />
     <Content Include="Views\Departments\AIndex.cshtml">
@@ -654,7 +657,6 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Scripts\version.json" />
     <Content Include="Views\AngularJS\Index.cshtml" />
     <Content Include="Views\Shared\_Demo1Partial.cshtml" />
     <Content Include="Views\Shared\_Demo3Partial.cshtml" />
