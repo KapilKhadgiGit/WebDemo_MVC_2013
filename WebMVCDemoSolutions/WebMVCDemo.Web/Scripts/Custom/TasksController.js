@@ -6,7 +6,6 @@ var demoApp = angular.module('demoApp');
 // deptApp.controller('DeptController', function ($scope, $http) {
 demoApp.controller('TaskController', ['$scope', '$http', function ($scope, $http) {
 
-
     $http.get('/TaskManager/GetAllTasks').success(function (data) {
         $scope.tasks = data;
 
@@ -15,12 +14,13 @@ demoApp.controller('TaskController', ['$scope', '$http', function ($scope, $http
         // Ideally Angular should be able to parse date directly to date object, but its not. So removing 'Date' string appended to the date format. 
         // Exact formatting of the date can be be set at view.
         angular.forEach($scope.tasks, function (item) {
-            item.DueDate = item.DueDate.replace('/Date(', '').replace(')/', '');
+            
+            if (item.DueDate != null && item.DueDate != 'undefined') {
+                item.DueDate = item.DueDate.replace('/Date(', '').replace(')/', '');
 
-            // Get the number of over due items from the task list.
-            $scope.currentDate = Date.now();
+                // Get the number of over due items from the task list.
+                $scope.currentDate = Date.now();
 
-            if (item.DueDate != null) {
                 if ($scope.currentDate > item.DueDate) {
                     $scope.overDueItems++;
                 }

@@ -183,12 +183,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AngularJSController.cs" />
+    <Compile Include="Controllers\AngularJSController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TaskManagerController.cs" />
-    <Compile Include="Controllers\Translator.cs" />
+    <Compile Include="Controllers\TaskManagerController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\Translator.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DAL\AspNetRole.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
     </Compile>
@@ -296,6 +302,7 @@
       <DependentUpon>WebDemoDb.edmx</DependentUpon>
       <LastGenOutput>WebDemoDb.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\Custom\Router.js" />
     <Content Include="Scripts\Custom\DeptController.js" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
