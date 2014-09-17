@@ -197,42 +197,51 @@
     </Compile>
     <Compile Include="DAL\AspNetRole.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\AspNetUser.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\AspNetUserClaim.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\AspNetUserLogin.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\C__MigrationHistory.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\Department.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\Employee.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\Task.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\WebDemoDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>WebDemoDb.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="DAL\WebDemoDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>WebDemoDb.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="DAL\WebDemoDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>WebDemoDb.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Framework\KLogger.cs">
       <SubType>Code</SubType>
@@ -260,8 +269,20 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DAL\WebDemoDb.Context.tt">
+      <DependentUpon>WebDemoDb.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebDemoDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\WebDemoDb.edmx.diagram">
+      <DependentUpon>WebDemoDb.edmx</DependentUpon>
+    </Content>
     <Content Include="DAL\WebDemoDb.edmx.sql" />
-    <Content Include="ExternalReferences\Inpro.Authentication.dll" />
+    <Content Include="DAL\WebDemoDb.tt">
+      <DependentUpon>WebDemoDb.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WebDemoDb.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -287,23 +308,6 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="DAL\WebDemoDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebDemoDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DAL\WebDemoDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebDemoDb.edmx</DependentUpon>
-      <LastGenOutput>WebDemoDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\WebDemoDb.edmx.diagram">
-      <DependentUpon>WebDemoDb.edmx</DependentUpon>
-    </Content>
-    <Content Include="DAL\WebDemoDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebDemoDb.edmx</DependentUpon>
-      <LastGenOutput>WebDemoDb.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\Custom\Router.js" />
     <Content Include="Scripts\Custom\DeptController.js" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -674,7 +678,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ExternalReferences\" />
     <Folder Include="Views\TaskManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DAL\WebDemoDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebDemoDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
