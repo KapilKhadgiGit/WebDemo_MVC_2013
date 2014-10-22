@@ -189,6 +189,7 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParallelProgramingController.cs" />
     <Compile Include="Controllers\TaskManagerController.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -665,6 +666,7 @@
     <Content Include="Views\Shared\_Demo1Partial.cshtml" />
     <Content Include="Views\Shared\_Demo3Partial.cshtml" />
     <Content Include="Views\Shared\_Demo2Partial.cshtml" />
+    <Content Include="Views\ParallelPrograming\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
