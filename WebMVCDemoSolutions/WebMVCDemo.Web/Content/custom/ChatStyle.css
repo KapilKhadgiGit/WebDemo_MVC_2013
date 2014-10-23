@@ -1,0 +1,160 @@
+﻿
+#divContainer #header {
+    padding: 20px;
+    background-color: #d7e5e4;
+    border-bottom: #5f9482 solid 2px;
+    color: #1e4638;
+    font-size: 24px;
+}
+
+#divContainer .submitButton {
+    background-color: #d7e5e4;
+    border: #5f9482 solid 1px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+    #divContainer .submitButton:hover {
+        background-color: #e1e1e1;
+    }
+
+#divContainer .login {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: solid 2px #5f9482;
+    color: #1e4638;
+}
+
+    #divContainer .login .textBox {
+        width: 240px;
+    }
+
+
+    #divContainer .login #divButton {
+        padding: 4px;
+        text-align: right;
+    }
+
+#divContainer .chatRoom {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px gray;
+}
+
+    #divContainer .chatRoom .title {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 8px;
+        background-color: #d7e5e4;
+        border-bottom: solid 1px #5f9482;
+    }
+
+    #divContainer .chatRoom .content {
+        height: 300px;
+        clear: both;
+    }
+
+        #divContainer .chatRoom .content .chatWindow {
+            float: left;
+            width: 409px;
+            height: 300px;
+            border-right: solid 1px #5f9482;
+            overflow-y: scroll;
+        }
+
+            #divContainer .chatRoom .content .chatWindow .message {
+                padding: 4px;
+            }
+
+                #divContainer .chatRoom .content .chatWindow .message .userName {
+                    font-weight: bold;
+                }
+
+        #divContainer .chatRoom .content .users {
+            float: right;
+            width: 235px;
+            height: 300px;
+        }
+
+            #divContainer .chatRoom .content .users .user {
+                display: block;
+                cursor: pointer;
+                padding: 4px;
+                background-color: #f9f9f9;
+                border-bottom: solid 1px #5f9482;
+            }
+
+            #divContainer .chatRoom .content .users .loginUser {
+                display: block;
+                padding: 4px;
+                color: gray;
+                border-bottom: solid 1px #5f9482;
+            }
+
+            #divContainer .chatRoom .content .users .user:hover {
+                background-color: #e1e1e1;
+            }
+
+    #divContainer .chatRoom .messageBar {
+        border-top: solid 1px gray;
+        padding: 4px;
+    }
+
+        #divContainer .chatRoom .messageBar .textbox {
+            width: 550px;
+        }
+
+#divContainer .disconnect {
+    position: absolute;
+    margin: 10px;
+    background-color: #ffcbcb;
+    padding: 4px;
+    border: solid 1px red;
+}
+
+
+#divContainer .draggable {
+    position: absolute;
+    border: #5f9482 solid 1px !important;
+    width: 250px;
+}
+
+    #divContainer .draggable .header {
+        cursor: move;
+        background-color: #d7e5e4;
+        border-bottom: #5f9482 solid 1px;
+        color: #1e4638;
+    }
+
+    #divContainer .draggable .selText {
+        color: black;
+        padding: 4px;
+    }
+
+    #divContainer .draggable .messageArea {
+        width: 250px;
+        overflow-y: scroll;
+        height: 200px;
+        border-bottom: #5f9482 solid 1px;
+    }
+
+        #divContainer .draggable .messageArea .message {
+            padding: 4px;
+        }
+
+    #divContainer .draggable .buttonBar {
+        width: 250px;
+        padding: 4px;
+    }
+
+        #divContainer .draggable .buttonBar .msgText {
+            width: 172px;
+        }
+
+        #divContainer .draggable .buttonBar .button {
+            margin-left: 4px;
+            width: 55px;
+        }
