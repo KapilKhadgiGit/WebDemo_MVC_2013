@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebMVCDemo.Web.Controllers
 {
+    [Authorize]
     public class ChatController : Controller
     {
         // GET: Chat

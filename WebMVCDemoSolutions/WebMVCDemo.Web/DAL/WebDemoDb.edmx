@@ -4,295 +4,62 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WebMVCDemoDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="WebMVCDemoDbModelStoreContainer">
-    <EntitySet Name="AspNetRoles" EntityType="WebMVCDemoDbModel.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserClaims" EntityType="WebMVCDemoDbModel.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserLogins" EntityType="WebMVCDemoDbModel.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUsers" EntityType="WebMVCDemoDbModel.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="C__MigrationHistory" EntityType="WebMVCDemoDbModel.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Departments" EntityType="WebMVCDemoDbModel.Store.Departments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Employees" EntityType="WebMVCDemoDbModel.Store.Employees" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tasks" EntityType="WebMVCDemoDbModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserRoles" EntityType="WebMVCDemoDbModel.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="WebMVCDemoDbModel.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="WebMVCDemoDbModel.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="WebMVCDemoDbModel.Store.FK_AspNetUserRoles_AspNetRoles">
-      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="WebMVCDemoDbModel.Store.FK_AspNetUserRoles_AspNetUsers">
-      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-    </AssociationSet>
-    <AssociationSet Name="deptno_fk" Association="WebMVCDemoDbModel.Store.deptno_fk">
-      <End Role="Department" EntitySet="Departments" />
-      <End Role="Employee" EntitySet="Employees" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="AspNetRoles">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="AspNetUserClaims">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="AspNetUserLogins">
-    <Key>
-      <PropertyRef Name="LoginProvider" />
-      <PropertyRef Name="ProviderKey" />
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
-  </EntityType>
-  <EntityType Name="AspNetUsers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
-    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
-    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
-    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="C__MigrationHistory">
-    <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
-    </Key>
-    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
-    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
-    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
-    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
-  </EntityType>
-  <EntityType Name="Departments">
-    <Key>
-      <PropertyRef Name="DeptNo" />
-    </Key>
-    <Property Name="DeptNo" Type="decimal" Nullable="false" Precision="2" Scale="0" />
-    <Property Name="DeptName" Type="varchar" Nullable="true" MaxLength="14" />
-    <Property Name="Location" Type="varchar" Nullable="true" MaxLength="13" />
-  </EntityType>
-  <EntityType Name="Employees">
-    <Key>
-      <PropertyRef Name="EmpNo" />
-    </Key>
-    <Property Name="EmpNo" Type="decimal" Nullable="false" Precision="4" Scale="0" />
-    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="10" />
-    <Property Name="Job" Type="varchar" Nullable="true" MaxLength="9" />
-    <Property Name="Manager" Type="decimal" Nullable="true" Precision="4" Scale="0" />
-    <Property Name="HireDate" Type="datetime" Nullable="true" />
-    <Property Name="Salary" Type="decimal" Nullable="true" Precision="19" Scale="4" />
-    <Property Name="DeptNo" Type="decimal" Nullable="true" Precision="2" Scale="0" />
-  </EntityType>
-  <EntityType Name="Tasks">
-    <Key>
-      <PropertyRef Name="TaskId" />
-    </Key>
-    <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="100" />
-    <Property Name="DueDate" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="AspNetUserRoles">
-    <Key>
-      <PropertyRef Name="AspNetRoles_Id" />
-      <PropertyRef Name="AspNetUsers_Id" />
-    </Key>
-    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-  </EntityType>
-  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUsers" Type="WebMVCDemoDbModel.Store.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="AspNetUserClaims" Type="WebMVCDemoDbModel.Store.AspNetUserClaims" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserClaims">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUsers" Type="WebMVCDemoDbModel.Store.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="AspNetUserLogins" Type="WebMVCDemoDbModel.Store.AspNetUserLogins" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserLogins">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="deptno_fk">
-    <End Role="Department" Type="WebMVCDemoDbModel.Store.Departments" Multiplicity="0..1" />
-    <End Role="Employee" Type="WebMVCDemoDbModel.Store.Employees" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Department">
-        <PropertyRef Name="DeptNo" />
-      </Principal>
-      <Dependent Role="Employee">
-        <PropertyRef Name="DeptNo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AspNetUserRoles_AspNetRoles">
-    <End Role="AspNetRoles" Type="WebMVCDemoDbModel.Store.AspNetRoles" Multiplicity="1" />
-    <End Role="AspNetUserRoles" Type="WebMVCDemoDbModel.Store.AspNetUserRoles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetRoles">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserRoles">
-        <PropertyRef Name="AspNetRoles_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AspNetUserRoles_AspNetUsers">
-    <End Role="AspNetUserRoles" Type="WebMVCDemoDbModel.Store.AspNetUserRoles" Multiplicity="*" />
-    <End Role="AspNetUsers" Type="WebMVCDemoDbModel.Store.AspNetUsers" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUsers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserRoles">
-        <PropertyRef Name="AspNetUsers_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="WebMVCDemoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DeptNo" />
+          </Key>
+          <Property Name="DeptNo" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="DeptName" Type="varchar" MaxLength="14" />
+          <Property Name="Location" Type="varchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmpNo" />
+          </Key>
+          <Property Name="EmpNo" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="9" />
+          <Property Name="Manager" Type="decimal" Precision="4" Scale="0" />
+          <Property Name="HireDate" Type="datetime" />
+          <Property Name="Salary" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="DeptNo" Type="decimal" Precision="2" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="DueDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_deptno_fk">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DeptNo" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DeptNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebMVCDemoDbModelStoreContainer">
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_deptno_fk" Association="Self.FK_deptno_fk">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebMVCDemoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="AspNetRole">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUserClaim">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUserLogin">
-          <Key>
-            <PropertyRef Name="LoginProvider" />
-            <PropertyRef Name="ProviderKey" />
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
-        </EntityType>
-        <EntityType Name="AspNetUser">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
-          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
-          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
-          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
-          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
-          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
-          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
-          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
-        </EntityType>
-        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserClaims">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AspNetUserLogins">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="AspNetUserRoles">
-          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
-          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="WebMVCDemoDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
-          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
-          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
-          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
-          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
-          </AssociationSet>
-          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
-            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-          </AssociationSet>
-          <EntitySet Name="C__MigrationHistory" EntityType="WebMVCDemoDbModel.C__MigrationHistory" />
           <EntitySet Name="Departments" EntityType="WebMVCDemoDbModel.Department" />
           <EntitySet Name="Employees" EntityType="WebMVCDemoDbModel.Employee" />
           <AssociationSet Name="deptno_fk" Association="WebMVCDemoDbModel.deptno_fk">
@@ -301,16 +68,6 @@
           </AssociationSet>
           <EntitySet Name="Tasks" EntityType="WebMVCDemoDbModel.Task" />
         </EntityContainer>
-        <EntityType Name="C__MigrationHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-            <PropertyRef Name="ContextKey" />
-          </Key>
-          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="DeptNo" />
@@ -328,7 +85,7 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Job" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="Manager" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="HireDate" Type="DateTime" Precision="0" />
+          <Property Name="HireDate" Type="DateTime" Precision="3" />
           <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="DeptNo" Type="Decimal" Precision="2" Scale="0" />
           <NavigationProperty Name="Department" Relationship="WebMVCDemoDbModel.deptno_fk" FromRole="Employee" ToRole="Department" />
@@ -360,61 +117,6 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="WebMVCDemoDbModelStoreContainer" CdmEntityContainer="WebMVCDemoDbEntities">
-    <EntitySetMapping Name="AspNetRoles">
-      <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.AspNetRole)">
-        <MappingFragment StoreEntitySet="AspNetRoles">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AspNetUserClaims">
-      <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.AspNetUserClaim)">
-        <MappingFragment StoreEntitySet="AspNetUserClaims">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
-          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AspNetUserLogins">
-      <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.AspNetUserLogin)">
-        <MappingFragment StoreEntitySet="AspNetUserLogins">
-          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
-          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.AspNetUser)">
-        <MappingFragment StoreEntitySet="AspNetUsers">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
-          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
-          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
-          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
-          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
-          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="C__MigrationHistory">
-      <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.C__MigrationHistory)">
-        <MappingFragment StoreEntitySet="C__MigrationHistory">
-          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
-          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="IsTypeOf(WebMVCDemoDbModel.Department)">
         <MappingFragment StoreEntitySet="Departments">
@@ -447,14 +149,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AspNetUserRoles" TypeName="WebMVCDemoDbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
-      <EndProperty Name="AspNetRoles">
-        <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
-      </EndProperty>
-      <EndProperty Name="AspNetUsers">
-        <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

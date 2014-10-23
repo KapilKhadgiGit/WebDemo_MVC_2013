@@ -214,26 +214,6 @@
     <Compile Include="Controllers\Translator.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAL\AspNetRole.cs">
-      <DependentUpon>WebDemoDb.tt</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DAL\AspNetUser.cs">
-      <DependentUpon>WebDemoDb.tt</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DAL\AspNetUserClaim.cs">
-      <DependentUpon>WebDemoDb.tt</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DAL\AspNetUserLogin.cs">
-      <DependentUpon>WebDemoDb.tt</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DAL\C__MigrationHistory.cs">
-      <DependentUpon>WebDemoDb.tt</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DAL\Department.cs">
       <DependentUpon>WebDemoDb.tt</DependentUpon>
       <SubType>Code</SubType>
