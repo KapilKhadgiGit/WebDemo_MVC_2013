@@ -26,7 +26,7 @@ $(function () {
         // Add the demo images as links with thumbnails to the page:
         $.each(result, function (index, result) {
             baseUrl = '/ImageResolver.ashx?size=s&ImageName=' + result.Name;
-            var baseUrlLarge = '/ImageResolver.ashx?size=l&imagename=' + result.Name;
+            var baseUrlLarge = '/ImageResolver.ashx?size=m&imagename=' + result.Name;
             // var baseUrlLarge = '/Photos/Diwali Zeon 2014/' + result.Name;
             $('<a/>')
                 // .append($('<img>').prop('src', baseUrl + '_s.jpg'))

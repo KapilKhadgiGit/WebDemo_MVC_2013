@@ -1,0 +1,121 @@
+﻿
+<style>
+    .thumbnail {
+        display: block;
+        padding: 4px;
+        line-height: 1.42857143;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        border-radius: 0;
+    }
+
+    .carousel-control.left {
+    }
+
+    .carousel-control.right {
+        left: auto;
+        right: 0;
+    }
+
+    .carousel-control {
+        padding-top: 10.25%;
+        width: 5%;
+        font-size: 40px;
+        color:white;
+        opacity:0.9;
+    }
+</style>
+
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="well-none">
+            <div id="myCarousel" class="carousel slide">
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x"><img src="/ImageResolver.ashx?size=500&ImageName=DSCN8555.JPG" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x"><img src="http://placehold.it/500x500" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x"><img src="/ImageResolver.ashx?size=500&ImageName=DSCN8555.JPG" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x col-xs-6" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+
+                <!--/carousel-inner-->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <b>‹</b>
+                </a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><b>›</b></a>
+
+            </div>
+            <!--/myCarousel-->
+        </div>
+        <!--/well-->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myCarousel').carousel({
+            interval: 0
+        })
+
+        $('#myCarousel').on('slid.bs.carousel', function () {
+            //alert("slid");
+        });
+
+
+    });
+
+
+</script>

@@ -284,6 +284,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Bootstrap-theme-blue.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -360,7 +361,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Kaps.png" />
+    <Content Include="Images\KapsLogo-Red.png" />
+    <Content Include="Images\KapsLogo-Transparent.png" />
+    <Content Include="Images\KapsLogo.png" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\Logo.ico" />
+    <Content Include="Images\Logo.png" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -1205,6 +1212,7 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Shared\ImageGalleryCarouselPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
