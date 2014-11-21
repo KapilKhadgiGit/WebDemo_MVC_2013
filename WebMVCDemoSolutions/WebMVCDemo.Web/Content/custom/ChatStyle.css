@@ -135,7 +135,7 @@
     }
 
     #divContainer .draggable .messageArea {
-        width: 250px;
+        /*width: 250px;*/
         overflow-y: scroll;
         height: 200px;
         border-bottom: #5f9482 solid 1px;

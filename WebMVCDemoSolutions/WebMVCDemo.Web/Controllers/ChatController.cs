@@ -14,5 +14,10 @@ namespace WebMVCDemo.Web.Controllers
         {
             return View();
         }
+        // GET: Chat
+        public ActionResult AIndex()
+        {
+            return View();
+        }
     }
 }

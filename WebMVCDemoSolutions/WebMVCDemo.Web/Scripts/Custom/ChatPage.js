@@ -8,9 +8,7 @@ $(function () {
 
     // Start Hub
     $.connection.hub.start().done(function () {
-
         registerEvents(chatHub)
-
     });
 });
 
@@ -74,7 +72,6 @@ function registerClientMethods(chatHub) {
         var ctrId = 'private_' + id;
         $('#' + ctrId).remove();
 
-
         var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
 
         $(disc).hide();
@@ -88,16 +85,13 @@ function registerClientMethods(chatHub) {
         AddMessage(userName, message);
     }
 
-
     chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message) {
 
         var ctrId = 'private_' + windowId;
 
-
         if ($('#' + ctrId).length == 0) {
 
             createPrivateChatWindow(chatHub, windowId, ctrId, fromUserName);
-
         }
 
         $('#' + ctrId).find('#divMessage').append('<div class="message"><span class="userName">' + fromUserName + '</span>: ' + message + '</div>');
@@ -105,9 +99,7 @@ function registerClientMethods(chatHub) {
         // set scrollbar
         var height = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
         $('#' + ctrId).find('#divMessage').scrollTop(height);
-
     }
-
 }
 
 function AddUser(chatHub, id, name) {
@@ -119,7 +111,6 @@ function AddUser(chatHub, id, name) {
     if (userId == id) {
 
         code = $('<div class="loginUser">' + name + "</div>");
-
     }
     else {
 
@@ -131,12 +122,10 @@ function AddUser(chatHub, id, name) {
 
             if (userId != id)
                 OpenPrivateChatWindow(chatHub, id, name);
-
         });
     }
 
     $("#divusers").append(code);
-
 }
 
 function AddMessage(userName, message) {
@@ -153,7 +142,6 @@ function OpenPrivateChatWindow(chatHub, id, userName) {
     if ($('#' + ctrId).length > 0) return;
 
     createPrivateChatWindow(chatHub, id, ctrId, userName);
-
 }
 
 function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
@@ -161,7 +149,7 @@ function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
     var div = '<div id="' + ctrId + '" class="ui-widget-content draggable" rel="0">' +
                '<div class="header">' +
                   '<div  style="float:right;">' +
-                      '<img id="imgDelete"  style="cursor:pointer;" src="/Images/delete.png"/>' +
+                      '<div id="imgDelete" class="glyphicon glyphicon-remove" style="cursor:pointer;" src=""></div>' +
                    '</div>' +
 
                    '<span class="selText" rel="0">' + userName + '</span>' +
@@ -202,7 +190,6 @@ function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
     });
 
     AddDivToContainer($div);
-
 }
 
 function AddDivToContainer($div) {
@@ -215,13 +202,6 @@ function AddDivToContainer($div) {
 
         }
     });
-
-    ////$div.resizable({
-    ////    stop: function () {
-
-    ////    }
-    ////});
-
 }
 
 function ShowUserNotfications(message) {
@@ -239,7 +219,7 @@ function ShowUserNotfications(message) {
         }
     }
     else {
-        alert("HTML5 Notifications are not supported by the browser. " + message);
+        // alert("HTML5 Notifications are not supported by the browser. " + message);
     }
 }
 

@@ -40,41 +40,72 @@ namespace WebMVCDemo.Web
             {
                 Image _img = null;
 
-                using (Image img = Image.FromFile(ConfigurationManager.AppSettings["PhotoGalleryPath"] + imageName))
+                using (FileStream fs = new FileStream(ConfigurationManager.AppSettings["PhotoGalleryPath"] + imageName, FileMode.Open, FileAccess.Read))
                 {
-                    if (size == "m")
+                    using (Image img = Image.FromStream(fs))
                     {
-                        W = img.Width / 2;
-                        H = img.Height / 2;
-                    }
-                    else if (size == "500")
-                    {
-                        W = 500;
-                        H = 500;
-                    }
+                        if (size == "m")
+                        {
+                            W = img.Width / 2;
+                            H = img.Height / 2;
+                        }
+                        else if (size == "500")
+                        {
+                            W = 500;
+                            H = 500;
+                        }
 
-                    _img = new Bitmap(W, H);
+                        _img = new Bitmap(W, H);
 
-                    using (Graphics g = Graphics.FromImage(_img))
-                    {
-                        g.DrawImage(img, 0, 0, W, H);
-                        g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
-                        g.Dispose();
+                        using (Graphics g = Graphics.FromImage(_img))
+                        {
+                            g.DrawImage(img, 0, 0, W, H);
+                            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+                            g.Dispose();
+                        }
+                        img.Dispose();
                     }
-                    img.Dispose();
                 }
+
+
+                //using (Image img = Image.FromFile(ConfigurationManager.AppSettings["PhotoGalleryPath"] + imageName))
+                //{
+                //    if (size == "m")
+                //    {
+                //        W = img.Width / 2;
+                //        H = img.Height / 2;
+                //    }
+                //    else if (size == "500")
+                //    {
+                //        W = 500;
+                //        H = 500;
+                //    }
+
+                //    _img = new Bitmap(W, H);
+
+                //    using (Graphics g = Graphics.FromImage(_img))
+                //    {
+                //        g.DrawImage(img, 0, 0, W, H);
+                //        g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+                //        g.Dispose();
+                //    }
+                //    img.Dispose();
+                //}
 
                 using (MemoryStream str = new MemoryStream())
                 {
                     _img = _img.GetThumbnailImage(W, H, null, IntPtr.Zero);
                     _img.Save(str, System.Drawing.Imaging.ImageFormat.Png);
                     _img.Dispose();
+
                     str.WriteTo(context.Response.OutputStream);
-                    str.Dispose();
+
                     str.Close();
+                    str.Dispose();
                 }
             }
 
+            GC.Collect(1, GCCollectionMode.Forced, false);
 
             context.Response.ContentType = ".png";
             context.Response.End();

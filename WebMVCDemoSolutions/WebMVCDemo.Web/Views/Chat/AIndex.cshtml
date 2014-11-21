@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Chat Room";
-    // Layout = "~/Views/Shared/_LayoutCustom.cshtml"; 
+    // Layout = "~/Views/Shared/_LayoutCustom.cshtml";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -10,16 +10,6 @@
 <link rel="stylesheet" href="/content/themes/base/all.css">
 
 <div id="divContainer">
-    @*<div id="divLogin" class="login">
-            <div>
-                Your Name:<br />
-                <input id="txtNickName" type="text" class="form-control" />
-            </div>
-            <div id="divButton">
-                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
-            </div>
-        </div>*@
-
     <div id="divChat" class="chatRoom">
         <div class="title">
             Welcome [<span id='spanUser'>@User.Identity.GetUserName() </span>]
