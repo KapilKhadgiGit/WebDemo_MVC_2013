@@ -15,26 +15,16 @@ namespace WebMVCDemo.Web.DAL
 using System;
     using System.Collections.Generic;
     
-public partial class Department
+public partial class C__MigrationHistory
 {
 
-    public Department()
-    {
+    public string MigrationId { get; set; }
 
-        this.Employees = new HashSet<Employee>();
+    public string ContextKey { get; set; }
 
-    }
+    public byte[] Model { get; set; }
 
-
-    public decimal DeptNo { get; set; }
-
-    public string DeptName { get; set; }
-
-    public string Location { get; set; }
-
-
-
-    public virtual ICollection<Employee> Employees { get; set; }
+    public string ProductVersion { get; set; }
 
 }
 

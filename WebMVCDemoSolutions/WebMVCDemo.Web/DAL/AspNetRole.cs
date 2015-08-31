@@ -15,26 +15,24 @@ namespace WebMVCDemo.Web.DAL
 using System;
     using System.Collections.Generic;
     
-public partial class Department
+public partial class AspNetRole
 {
 
-    public Department()
+    public AspNetRole()
     {
 
-        this.Employees = new HashSet<Employee>();
+        this.AspNetUsers = new HashSet<AspNetUser>();
 
     }
 
 
-    public decimal DeptNo { get; set; }
+    public string Id { get; set; }
 
-    public string DeptName { get; set; }
-
-    public string Location { get; set; }
+    public string Name { get; set; }
 
 
 
-    public virtual ICollection<Employee> Employees { get; set; }
+    public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
 
 }
 

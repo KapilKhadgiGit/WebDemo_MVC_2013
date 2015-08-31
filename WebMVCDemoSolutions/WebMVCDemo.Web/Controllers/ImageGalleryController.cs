@@ -19,15 +19,24 @@ namespace WebMVCDemo.Web.Controllers
             List<ImageDetails> imageList = new List<ImageDetails>();
             ImageDetails imageDetails;
 
+            if (!Directory.Exists(ConfigurationManager.AppSettings["PhotoGalleryPath"]))
+            {
+                throw new Exception("Path not found. " + ConfigurationManager.AppSettings["PhotoGalleryPath"]);
+            }
+
             foreach (string filePath in Directory.GetFiles(ConfigurationManager.AppSettings["PhotoGalleryPath"]))
             {
                 imageDetails = new ImageDetails();
 
                 FileInfo imageFile = new FileInfo(filePath);
-                imageDetails.Name = imageFile.Name;
-                imageDetails.Title = imageFile.Name;
 
-                imageList.Add(imageDetails);
+                if (imageFile.Extension == ".jpg")
+                {
+                    imageDetails.Name = imageFile.Name;
+                    imageDetails.Title = imageFile.Name;
+
+                    imageList.Add(imageDetails);
+                }
             }
 
             return imageList;

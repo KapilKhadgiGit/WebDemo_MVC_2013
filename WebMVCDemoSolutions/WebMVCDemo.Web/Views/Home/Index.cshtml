@@ -1,15 +1,12 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <div class="jumbotron">
     <h1>Kaps</h1>
     <p class="lead">Kaps is a free web framework for building great personal Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
 @*@Html.Partial("~/views/shared/ImageGalleryCarouselPartial.cshtml")*@
-
 
 <div class="row text-center">
     <iframe width="560" height="315" src="//www.youtube.com/embed/Dl4vB-u9TJ4" frameborder="0" allowfullscreen></iframe>
@@ -17,6 +14,8 @@
 <div class="row">
     <div class="col-md-4">
         <h2>True Responsive Design</h2>
+        @this.Context.GetGlobalResourceObject("Resource1", "HomeLandingMessageTitle");
+        @*<h2>@WebMVCDemo.Web.App_GlobalResources.UserMessages.HomeLandingMessageTitle</h2>*@
         <p>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
@@ -35,4 +34,3 @@
         <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
 </div>
-

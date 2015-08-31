@@ -38,7 +38,8 @@ $(function () {
         });
     }).error(function (msg) {
         var message = msg;
-        debugger;
+        alert(msg.responseText);
+        //debugger;
     });;
 
     $('#borderless-checkbox').on('change', function () {

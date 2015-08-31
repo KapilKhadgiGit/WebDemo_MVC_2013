@@ -15,26 +15,20 @@ namespace WebMVCDemo.Web.DAL
 using System;
     using System.Collections.Generic;
     
-public partial class Department
+public partial class AspNetUserClaim
 {
 
-    public Department()
-    {
+    public int Id { get; set; }
 
-        this.Employees = new HashSet<Employee>();
+    public string UserId { get; set; }
 
-    }
+    public string ClaimType { get; set; }
 
-
-    public decimal DeptNo { get; set; }
-
-    public string DeptName { get; set; }
-
-    public string Location { get; set; }
+    public string ClaimValue { get; set; }
 
 
 
-    public virtual ICollection<Employee> Employees { get; set; }
+    public virtual AspNetUser AspNetUser { get; set; }
 
 }
 
